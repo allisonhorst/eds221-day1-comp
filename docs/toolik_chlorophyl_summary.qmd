@@ -12,6 +12,7 @@ library(tidyverse)
 library(janitor)
 library(here)
 library(skimr)
+library(palmerpenguins)
 
 ```
 
@@ -61,6 +62,20 @@ ggsave(plot = chlorophyll_pprod_graph,
 
 ```
 
+```{r}
+
+names(penguins)
+
+gentoo <- penguins %>%
+  filter(species == "Gentoo")
+
+ggplot(data = gentoo, aes(x = year, y = flipper_length_mm)) +
+  geom_jitter(width = 0.25)
+
+
+print(penguins$species)
+
+```
 
 
 
